@@ -19,6 +19,16 @@
   	<servlet-name>depart</servlet-name>
   	<url-pattern>/depart</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+	<servlet-name>shop</servlet-name>
+	<servlet-class>controller.BookshopController</servlet-class>  
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>shop</servlet-name>
+  	<url-pattern>/shop</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
