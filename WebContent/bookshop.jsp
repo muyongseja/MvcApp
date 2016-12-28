@@ -7,7 +7,8 @@
 </head>
 <body>
 <h1>도서 주문 페이지</h1>
-<form method="post" action="cart.jsp">
+<form method="post" action="shop">
+	<input type="hidden" name="cmd" value="CART"/>
 	<b>도서 선택 : </b>
 	<select name="book">
 		<option>어린왕자 / 생떽쥐뻬리 / 15000</option>

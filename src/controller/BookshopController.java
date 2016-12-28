@@ -19,8 +19,19 @@ public class BookshopController extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String cmd = req.getParameter("cmd");
+		String url = "";
+		
+		if(cmd.equals("CART")){
+			url = "cart.jsp";
+		}
+		else if(cmd.equals("CHKOUT")){
+			url = "checkout.jsp";
+		}
+		
+		
 		RequestDispatcher dispatcher = 
-				req.getRequestDispatcher("/WEB-INF/views/departResult.jsp");
+				req.getRequestDispatcher(url);
 		dispatcher.forward(req, resp);
 	}
 }

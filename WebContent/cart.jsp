@@ -13,7 +13,8 @@
 	</tr>
 </table>
 <br><br>
-<form method="post" action="checkout.jsp">
+<form method="post" action="shop">
+	<input type="hidden" name="cmd" value="CHKOUT"/>
 	<input type="submit" value="Ã¼Å© ¾Æ¿ô"/>
 </form>
 </body>
