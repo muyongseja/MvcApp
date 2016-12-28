@@ -21,6 +21,8 @@ public class BookshopController extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("euc-kr");
+		
 		String cmd = req.getParameter("cmd");
 		String url = "";
 		HttpSession session = req.getSession(); 

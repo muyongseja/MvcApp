@@ -1,3 +1,5 @@
+<%@page import="model.BookDto"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page contentType="text/html; charset=EUC-KR"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +14,18 @@
 		<th>도서 제목</th><th>작가</th><th>가격</th><th>수량</th>
 	</tr>
 <%
-	
+	ArrayList bookList = (ArrayList)session.getAttribute("bookList");
+	for(int i=0; i<bookList.size(); i++){
+		BookDto dto = (BookDto)bookList.get(i);
+%>
+	<tr>
+		<td><%=dto.getTitle()%></td>
+		<td><%=dto.getAuthor()%></td>
+		<td><%=dto.getPrice()%></td>
+		<td><%=dto.getQuantity()%></td>
+	</tr>
+<%
+	}
 %>
 </table>
 <br><br>
