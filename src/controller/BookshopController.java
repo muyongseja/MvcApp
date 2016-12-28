@@ -31,7 +31,7 @@ public class BookshopController extends HttpServlet{
 				(ArrayList)session.getAttribute("bookList");
 		
 		if(cmd.equals("CART")){
-			url = "/WEB-INF/views/cart.jsp";
+			url = "bookshop.jsp";
 			
 			if(bookList == null)
 				bookList = new ArrayList<BookDto>();

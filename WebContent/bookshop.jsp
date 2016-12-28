@@ -20,6 +20,8 @@
 	<input type="text" name="quantity" size="2" value="1"/>
 	<input type="submit" value="장바구니에 담기"/>
 </form>
+<hr/>
+<jsp:include page="cart.jsp"></jsp:include>
 </body>
 </html>
 

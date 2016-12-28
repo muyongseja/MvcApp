@@ -14,6 +14,7 @@
 		<th>도서 제목</th><th>작가</th><th>가격</th><th>수량</th>
 	</tr>
 <%
+try{
 	ArrayList bookList = (ArrayList)session.getAttribute("bookList");
 	for(int i=0; i<bookList.size(); i++){
 		BookDto dto = (BookDto)bookList.get(i);
@@ -26,6 +27,8 @@
 	</tr>
 <%
 	}
+}
+catch(NullPointerException err){}
 %>
 </table>
 <br><br>
