@@ -26,7 +26,7 @@ public class DepartController extends HttpServlet{
 		
 		req.setAttribute("advice", advice);
 		RequestDispatcher dispatcher = 
-				req.getRequestDispatcher("departResult.jsp");
+				req.getRequestDispatcher("/WEB-INF/views/departResult.jsp");
 		dispatcher.forward(req, resp);
 	}
 }
