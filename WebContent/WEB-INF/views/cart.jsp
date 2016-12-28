@@ -11,6 +11,9 @@
 	<tr>
 		<th>도서 제목</th><th>작가</th><th>가격</th><th>수량</th>
 	</tr>
+<%
+	
+%>
 </table>
 <br><br>
 <form method="post" action="shop">
