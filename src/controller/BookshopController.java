@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.BookDto;
 
@@ -22,13 +23,19 @@ public class BookshopController extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String cmd = req.getParameter("cmd");
 		String url = "";
-		
-		ArrayList bookList;
+		HttpSession session = req.getSession(); 
+				
+		ArrayList<BookDto> bookList = 
+				(ArrayList)session.getAttribute("bookList");
 		
 		if(cmd.equals("CART")){
 			url = "/WEB-INF/views/cart.jsp";
 			
-			BookDto dto = getBook(req);
+			if(bookList == null)
+				bookList = new ArrayList<BookDto>();
+			
+			bookList.add(getBook(req));
+			session.setAttribute("bookList", bookList);
 		}
 		else if(cmd.equals("CHKOUT")){
 			url = "/WEB-INF/views/checkout.jsp";
