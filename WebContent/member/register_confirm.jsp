@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>회원 가입 확인</h1>
-<form method="post" action="register_complete.jsp">
+<form method="post" action="member?cmd=COMPLETE">
 	당신이 입력한 내용은 다음과 같습니다.
 	<ul>
 		<li>아이디 : </li>
