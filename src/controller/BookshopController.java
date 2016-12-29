@@ -41,6 +41,15 @@ public class BookshopController extends HttpServlet{
 		}
 		else if(cmd.equals("CHKOUT")){
 			url = "/WEB-INF/views/checkout.jsp";
+			
+			int sum = 0;
+			// 전체 구매 금액 구하기
+			for(int i=0; i<bookList.size(); i++){
+				BookDto dto = (BookDto)bookList.get(i);
+				sum += dto.getPrice() * dto.getQuantity(); 
+			}
+			
+			session.setAttribute("sum", sum);
 		}
 		else if(cmd.equals("DEL")){
 			url = "bookshop.jsp";

@@ -33,7 +33,7 @@ catch(NullPointerException err){}
 %>
 </table>
 <br><br>
-<b>전체 구입 액수 : </b><br><br>
+<b>전체 구입 액수 : ${sum}</b><br><br>
 <form method="post">
 	<input type="submit" value="결제"/>
 </form>
