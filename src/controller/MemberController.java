@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.CompleteCommand;
 import model.ConfirmCommand;
+import model.FactoryCommand;
 import model.ICommand;
 import model.MainCommand;
 import model.RegisterCommand;
@@ -46,6 +47,7 @@ public class MemberController extends HttpServlet{
 		}
 		*/
 		
+		/*
 		String cmd = req.getParameter("cmd");
 		ICommand iCmd = null;		
 		
@@ -64,6 +66,13 @@ public class MemberController extends HttpServlet{
 		else{
 			// 肋给等 夸没俊 措茄 贸府
 		}
+		*/
+		
+		String cmd = req.getParameter("cmd");
+		ICommand iCmd = null;	
+		
+		FactoryCommand factory = FactoryCommand.newInstance();
+		iCmd = factory.createCommand(cmd);
 		
 		String url = (String)iCmd.processCommand(req, resp);
 		RequestDispatcher view = req.getRequestDispatcher(url);
