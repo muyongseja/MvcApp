@@ -42,6 +42,11 @@ public class BookshopController extends HttpServlet{
 		else if(cmd.equals("CHKOUT")){
 			url = "/WEB-INF/views/checkout.jsp";
 		}
+		else if(cmd.equals("DEL")){
+			url = "bookshop.jsp";
+			int idx = Integer.parseInt(req.getParameter("idx"));
+			bookList.remove(idx);
+		}
 			
 		RequestDispatcher dispatcher = 
 				req.getRequestDispatcher(url);

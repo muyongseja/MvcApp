@@ -24,6 +24,13 @@ try{
 		<td><%=dto.getAuthor()%></td>
 		<td><%=dto.getPrice()%></td>
 		<td><%=dto.getQuantity()%></td>
+		<td>
+			<form method="post" action="shop">
+				<input type="hidden" name="cmd" value="DEL"/>
+				<input type="hidden" name="idx" value="<%=i%>"/>
+				<input type="submit" value="»èÁ¦"/>
+			</form>
+		</td>
 	</tr>
 <%
 	}
