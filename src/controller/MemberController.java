@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.CompleteCommand;
+import model.ConfirmCommand;
 import model.ICommand;
+import model.MainCommand;
 import model.RegisterCommand;
 
 public class MemberController extends HttpServlet{
@@ -44,28 +47,25 @@ public class MemberController extends HttpServlet{
 		*/
 		
 		String cmd = req.getParameter("cmd");
-		ICommand iCmd;		
+		ICommand iCmd = null;		
 		
 		if(cmd.equals("REGISTER")){
 			iCmd = new RegisterCommand();
 		}
 		else if(cmd.equals("CONFIRM")){
-			// 입력값 확인
-			// 입력값이 잘못 되었을 경우 에러 페이지로 이동
-			url = "member/register_confirm.jsp";
+			iCmd = new ConfirmCommand();
 		}
 		else if(cmd.equals("COMPLETE")){
-			// DB연동
-			url = "member/register_complete.jsp";
+			iCmd = new CompleteCommand();
 		}
 		else if(cmd.equals("MAIN")){
-			url = "index.html";
+			iCmd = new MainCommand();
 		}
 		else{
 			// 잘못된 요청에 대한 처리
 		}
 		
-		
+		String url = (String)iCmd.processCommand(req, resp);
 		RequestDispatcher view = req.getRequestDispatcher(url);
 		view.forward(req, resp);
 	}	
